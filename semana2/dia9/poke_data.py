@@ -5,11 +5,13 @@ class PokeData:
         self.weight = weight
         self.other_abilities = other_abilities
     
-    def def api_get_request(name: str):
+    def api_get_request(name: str):
         response = requests.get(pokeapi_url + name).json()
         return response 
+
+    
+    
 
     def __del__(self):
         return None
 
-    

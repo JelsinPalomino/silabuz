@@ -26,11 +26,22 @@ class Abilities:
         for i in range(len(response)):
             abilities.append(response[i]['ability']['name'])
         return abilities
-
+"""
 pokemon = Abilities("Se recibió con exito!!!", "ditto")
 print(pokemon.msg)
 print(pokemon.response)
 print(pokemon.get_abilities_from_response())
+"""
+
+class Weight:
+    def __init__(self, msg:str, name:str):
+        self.msg = msg
+        self.response = Conexion_pokeapi(name)
+    
+    def get_weight_from_response(self):
+        weight = response["weight"] 
+        return weight
+
 
 """
 class PokeData:
