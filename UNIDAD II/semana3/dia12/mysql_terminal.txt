@@ -1,0 +1,14 @@
+1.- Debemos verificar que tengamos el bin de MySQL server en las variables de entorno
+y si no esta alli, debemos agregarlo para correr los comandos
+
+2.- Seguimos los siguientes comandos
+>> mysql -u root -p
+>> show databases;
+>> drop databases [NOMBRE_DB];
+>> create database [NEO_NOMBRE_DB];
+>> source [Path + NOMBRE.sql];
+>> use [NEO_NOMBRE_DB];
+>> show tables;
+
+3.- En el MySQL Wornbech para ver el esquema, seguimos los siguientes botones
+database -> Reverse Engineer -> Escogemos el nombre del DB que queremos ver

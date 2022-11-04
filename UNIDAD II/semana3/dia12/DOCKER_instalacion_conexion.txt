@@ -1,0 +1,18 @@
+Instalar Docker en windows 10:
+
+1.- Activar la función "virtualización" de windows
+https://www.youtube.com/watch?v=CTkcY5hbmLM&t=1s
+
+2.- Instalar Docker en windows 10 con WSL2
+https://www.youtube.com/watch?v=F1i5sZqzoTs&t=553s
+
+
+Repositorio Virtual Docker
+>> docker pull mysql
+>> docker images
+>> docker run --name test-mysql -p 33061:3306 -e MYSQL_ROOT_PASSWORD=jelsin_1 mysql:latest
+>> docker container ls    # Obtenemos el CONTAINER_ID
+>> docker exec -i CONTAINER_ID mysql -uroot -pjelsin_1 mysql < NOMBRE_ARCHIVO.sql # la terminal debe estar abierto en la carpeta donde esta el .sql
+
+Nota: Para hacer la conexión con MySQLWorBrench debemos crear otra Conexión con la información que se
+agrego en el docker como el IP [33061] y el password [jelsin_1] 
