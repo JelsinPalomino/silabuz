@@ -85,18 +85,34 @@ WHERE phone LIKE '%0';
 /*
 PREGUNTA5: 
 Queremos obtener los siguientes datos de órdenes:
-
 - Nombre del cliente (customerName)
 - Nombre del producto
 - Precio x unidad del producto
 - Comentarios de la venta
-- Que cumplen las siguientes condiciones:
-
-La venta debe haberse hecho posterior al 01 de enero del 2005.
-Dentro de los comentarios debe estar la palabra "Customer".
-El precio de la unidad debe ser mayor a 180.
+Que cumplen las siguientes condiciones:
+- La venta debe haberse hecho posterior al 01 de enero del 2005.
+- Dentro de los comentarios debe estar la palabra "Customer".
+- El precio de la unidad debe ser mayor a 180.
 */
+# orders
+# orderdetails | priceEach
+# products | productName
+# customers |
 
+Select customerName, productName, priceEach, comments
+from orders O inner join orderdetails OD
+On O.orderNumber = OD.orderNumber
+inner join products P
+On P.productCode = OD.productCode
+inner join customers C
+On C.customerNumber = O.customerNumber
+
+Where orderDate > '2005-01-01'
+and comments regexp "customer" 
+and priceEach > 180
+;
+
+# DEBEMOS OPTIMIZARLO y mandar al grupo del whatsapp 
 
 /*
 PREGUNTA6: Queremos conocer los siguientes datos de algunas órdenes:
